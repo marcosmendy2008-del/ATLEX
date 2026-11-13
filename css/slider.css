@@ -1,0 +1,77 @@
+/* ---------- CONTENEDOR ---------- */
+.slider {
+    width: 90%;
+    height: 26em;
+    background-color: rgb(235,235,235);
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin-left: 10%;
+    margin-right: auto;
+}
+
+/* ---------- LISTA ---------- */
+.slider ul {
+    display: flex;
+    width: 600%; /* 600% porque son 6 imágenes */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation: slide 24s infinite ease-in-out;
+}
+
+/* ---------- CADA IMAGEN ---------- */
+.slider li {
+    width: 16.6666%; /* Cada una ocupa exactamente 1/6 del ul */
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.slider img {
+    width: 90%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Estira la imagen para rellenar todo el banner sin dejar espacios grises */
+}
+/* ---------- SOMBRA INFERIOR ---------- */
+.slider::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 7em;
+    background: linear-gradient(
+        to bottom,
+        rgba(235,235,235,0),
+        rgb(235,235,235)
+    );
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* ---------- ANIMACIÓN PARA 6 FOTOS ---------- */
+@keyframes slide {
+    0%, 12% {
+        transform: translateX(0%);
+    }
+    16.66%, 28.66% {
+        transform: translateX(-16.6666%);
+    }
+    33.33%, 45.33% {
+        transform: translateX(-33.3332%);
+    }
+    50%, 62% {
+        transform: translateX(-49.9998%);
+    }
+    66.66%, 78.66% {
+        transform: translateX(-66.6664%);
+    }
+    83.33%, 95.33% {
+        transform: translateX(-83.3330%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}

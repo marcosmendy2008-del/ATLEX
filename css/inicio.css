@@ -1,0 +1,109 @@
+section{
+    width: 100%;
+    margin: 2em 0;
+    text-align: center;
+}
+
+.subtitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    font-size: 1em;
+    color: rgb(40,40,40);
+    font-weight: 600;
+}
+            
+.subtitulo::before, .subtitulo::after{
+    content: "";
+    width: 3em;
+    height: 0.05em;
+    background-color: rgb(150,150,150);
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+/* ---------- MODIFICADO: Cambiado a CSS Grid de 5 columnas ---------- */
+.nav{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas exactas */
+    gap: 20px;                             /* Espacio prolijo entre tarjetas */
+}
+
+/* ---------- MODIFICADO: Ancho automático para que entren las 5 ---------- */
+.subnav{
+    width: 100%; /* Ocupa el 100% de la celda de la grilla asignada */
+    background-color: rgb(255,255,255);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Un sutil sombreado queda genial */
+    overflow: hidden;
+}
+
+.imag{
+    width: 100%;
+    height: 180px; /* Altura fija para que todas las fotos queden alineadas */
+    background-color: rgb(235, 235, 235);
+}
+
+.imag img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Para que la imagen se vea entera sin deformarse */
+}
+
+.info{
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.info button{
+    width: 55%;
+    margin-top: 0.8em;
+    padding: 0.8em 0;
+    border: none;
+    border-radius: 0.3em;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(22,35,33);
+    color: rgb(255,255,255);
+    font-size: 0.75em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.info button:hover{
+    background-color: rgb(40,55,52);
+    transition: 0.2s;
+}
+
+.nombre{
+    font-size: 0.85em;
+    color: rgb(40,40,40);
+    font-weight: 400;
+}
+
+.precio{
+    font-size: 1em;
+    color: rgb(15,15,15);
+    font-weight: 700;
+}
+
+.tachado{
+    font-size: 0.75em;
+    color: rgb(140,140,140);
+    text-decoration: line-through;
+}
+
+.cuotas{
+    font-size: 0.75em;
+    color: rgb(90,90,90);
+}

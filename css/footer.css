@@ -1,0 +1,36 @@
+footer{width: 100%;
+       margin-top: 1em;
+       display: flex;
+       flex-direction: column;
+       background-color: rgb(255, 255, 255);}
+
+.footer1{width: 100%;
+         padding: 1em 2em 0.5em 2em;
+         display: flex;
+         justify-content: right;
+         gap: 1em;}
+
+.footer1 img{width: 1.25em;
+             height: 1.25em;}
+
+.footer1 img:hover{width: 1.5em;
+                   height: 1.5em;
+                   transition: 0.3s;}
+
+.footer2{width: 100%;
+         background-color: rgb(255, 255, 255);
+         padding: 1em 2em;
+         text-align: left;
+         border-top: 0.08em solid rgb(235,235,235);}
+
+.copyright{font-size: 0.85em;
+           color: rgb(40,40,40);
+           font-weight: 400;}
+
+.reclamos{font-size: 0.75em;
+          color: rgb(40,40,40);
+          font-weight: 400;}
+
+.reclamos a{color: rgb(40,40,40);
+            font-weight: 600;
+            text-decoration: none;}
