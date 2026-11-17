@@ -36,52 +36,45 @@
                 <p class="subtitulo"> Para vos </p>
             </section>
             <?php 
-                include "basededatos.php";
-                $resultado = $conexion->query("SELECT * FROM productos ORDER BY RAND()");
-            ?>
-        <dialog id="modalLogin" class="popup-dialog">
-            <div class="popup-content">
-                <h2>Iniciar Sesión</h2>
-                <form id="form-login">
-                    <input type="text" id="nombre-input" placeholder="ingrese un nombre" required>
-                    <input type="email" id="email-input" placeholder="ingrese un correo nombre@gmail" required>
-                
-                    <div class="botones-genero">
-                        <button type="button" class="btn-genero" data-valor="hombre">👦 soy hombre</button>
-                        <button type="button" class="btn-genero" data-valor="mujer">👧 soy mujer</button>
+    include "basededatos.php";
+    $resultado = $conexion->query("SELECT * FROM productos ORDER BY RAND()");
+?>
+<nav>
+    <div class="nav">
+        <?php if ($resultado && $resultado->num_rows > 0): ?>
+            <?php while($row = $resultado->fetch_assoc()): ?>
+                <div class="subnav producto-item" 
+                     data-nombre="<?= strtolower(htmlspecialchars($row['nombre'])) ?>"
+                     data-categoria="<?= strtolower(htmlspecialchars($row['categoria'] ?? 'general')) ?>"
+                     data-genero="<?= htmlspecialchars($row['genero'] ?? 'Unisex') ?>">
+                    
+                    <div class="imag">
+                        <img src="<?= htmlspecialchars($row['imagen']) ?>" alt="<?= htmlspecialchars($row['nombre']) ?>">
                     </div>
 
-                    <button type="submit" id="btn-enviar" disabled>Enviar</button>
-                </form>
-            </div>
-        </dialog>
-            <nav>
-                <div class="nav">
-                    <?php if ($resultado && $resultado->num_rows > 0): ?>
-                        <?php while($row = $resultado->fetch_assoc()): ?>
-                            <div class="subnav">
-                                <div class="imag">
-                                    <img src="<?= htmlspecialchars($row['imagen']) ?>" alt="<?= htmlspecialchars($row['nombre']) ?>">
-                                </div>
-
-                                <div class="info">
-                                    <p class="nombre"><?= htmlspecialchars($row['nombre']) ?></p>
-                                    <p class="precio">$<?= number_format($row['precio'], 2, ',', '.') ?></p>
-                                    <button>Comprar</button>
-                                </div>
-                            </div>
-                        <?php endwhile; ?>
-                    <?php else: ?>
-                        <p style="padding: 20px;">No hay productos cargados.</p>
-                    <?php endif; ?>
+                    <div class="info">
+                        <p class="nombre"><?= htmlspecialchars($row['nombre']) ?></p>
+                        <p class="precio">$<?= number_format($row['precio'], 2, ',', '.') ?></p>
+                        <button>Comprar</button>
+                    </div>
                 </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <p style="padding: 20px;">No hay productos cargados.</p>
+        <?php endif; ?>
+    </div>
+ <?php include "components/footer.php"; ?>
+
             </nav>
+                            
         </main>
 
-        <?php include "components/footer.php"; ?>        
+
     </div>
 
     <script src="js/header.js"></script>
     <script src="js/iniciarSesion.js"></script>
+    <script src="js/barraDeBusqueda.js"></script>
 </body>
 </html>
+                   

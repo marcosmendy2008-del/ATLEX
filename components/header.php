@@ -30,40 +30,37 @@
             <li>
                 <a class="<?= $pagina=="inicio" ? "activo" : "" ?>" href="index.php"> Inicio </a>
             </li>
-            <li class="desplegable">
-                <a href="#"> Categorías </a>
-                <div class="menu">
-                    <div class="columna">
-                        <h1> Hombre </h1>
-
-                        <a href="#"> Remeras </a>
-                        <a href="#"> Pantalones </a>
-                        <a href="#"> Joggers </a>
-                        <a href="#"> Buzos </a>
-                        <a href="#"> Camperas </a>
-                        <a href="#"> Shorts </a>
+                <li class="desplegable">
+                    <a href="#"> Categorías </a>
+                    <div class="menu">
+                        <div class="columna">
+                            <h1> Hombre </h1>
+                            <a href="#" class="filtro-categoria" data-categoria="remeras"> Remeras </a>
+                            <a href="#" class="filtro-categoria" data-categoria="pantalones"> Pantalones </a>
+                            <a href="#" class="filtro-categoria" data-categoria="joggers"> Joggers </a>
+                            <a href="#" class="filtro-categoria" data-categoria="buzos"> Buzos </a>
+                            <a href="#" class="filtro-categoria" data-categoria="camperas"> Camperas </a>
+                            <a href="#" class="filtro-categoria" data-categoria="shorts"> Shorts </a>
+                        </div>
+                        
+                        <div class="columna">
+                            <h1> Mujer </h1>
+                            <a href="#" class="filtro-categoria" data-categoria="remeras"> Remeras </a>
+                            <a href="#" class="filtro-categoria" data-categoria="jeans"> Jeans </a>
+                            <a href="#" class="filtro-categoria" data-categoria="vestidos"> Vestidos </a>
+                            <a href="#" class="filtro-categoria" data-categoria="buzos"> Buzos </a>
+                            <a href="#" class="filtro-categoria" data-categoria="calzas"> Calzas </a>
+                        </div>
+                        
+                        <div class="columna">
+                            <h1> Accesorios </h1>
+                            <a href="#" class="filtro-categoria" data-categoria="gorras"> Gorras </a>
+                            <a href="#" class="filtro-categoria" data-categoria="medias"> Medias </a>
+                            <a href="#" class="filtro-categoria" data-categoria="mochilas"> Mochilas </a>
+                            <a href="#" class="filtro-categoria" data-categoria="cinturones"> Cinturones </a>
+                        </div>
                     </div>
-                    
-                    <div class="columna">
-                        <h1> Mujer </h1>
-
-                        <a href="#"> Remeras </a>
-                        <a href="#"> Jeans </a>
-                        <a href="#"> Vestidos </a>
-                        <a href="#"> Buzos </a>
-                        <a href="#"> Calzas </a>
-                    </div>
-                    
-                    <div class="columna">
-                        <h1> Accesorios </h1>
-
-                        <a href="#"> Gorras </a>
-                        <a href="#"> Medias </a>
-                        <a href="#"> Mochilas </a>
-                        <a href="#"> Cinturones </a>
-                    </div>
-                </div>
-            </li>
+                </li>
             <li> <a href="soloParaVos.php"> Solo para vos </a> </li>
             <li> <a href="contacto.php"> Contacto </a> </li>
             <li> <a href="devolucion.php"> Política de Devolución </a> </li>
